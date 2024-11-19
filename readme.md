@@ -1,8 +1,9 @@
-# State machine generation Siemens TIA-Portal
+# State machine generation for Siemens TIA-Portal
 
-Library for generation of state-machine templates FB in Siemens TIA-Portal.
+A python library for generation of state-machine template Function Blocks for Siemens TIA-Portal.
 
-The main purpose is to be able to design the state machine before starting to program in TIA, the generated state diagram can be used to verify the desired function and can be used for software documentation.
+This library makes it possible to start with the *design documentation* and generate the code from it. 
+I always find that when I start with a rough outline (documentation) of what I want to do, the code usualy tourns out better, this library is to support that kind of workflow.
 
 
 ## Workflow
