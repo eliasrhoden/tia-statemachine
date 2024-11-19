@@ -1,0 +1,1682 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Document>
+	<Engineering version="V17" />
+	<DocumentInfo>
+		<Created>2021-09-01T12:00:00</Created>
+		<ExportSetting>None</ExportSetting>
+		<InstalledProducts>
+			<Product>
+				<DisplayName>Totally Integrated Automation Portal</DisplayName>
+				<DisplayVersion>V17 Update 6</DisplayVersion>
+			</Product>
+		</InstalledProducts>
+	</DocumentInfo>
+	<SW.Blocks.FB ID="0">
+		<AttributeList>
+			<Interface>
+				<Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+					<Section Name="Input">
+						<Member Name="enable" Datatype="Bool">
+							<Comment>
+								<MultiLanguageText Lang="sv-SE">Enables the state machine</MultiLanguageText>
+								<MultiLanguageText Lang="de-DE">Enables the state machine</MultiLanguageText>
+								<MultiLanguageText Lang="en-US">Enables the state machine</MultiLanguageText>
+								<MultiLanguageText Lang="es-ES">Enables the state machine</MultiLanguageText>
+								<MultiLanguageText Lang="fr-FR">Enables the state machine</MultiLanguageText>
+								<MultiLanguageText Lang="it-IT">Enables the state machine</MultiLanguageText>
+								<MultiLanguageText Lang="ja-JP">Enables the state machine</MultiLanguageText>
+								<MultiLanguageText Lang="zh-CN">Enables the state machine</MultiLanguageText>
+							</Comment>
+						</Member>
+						<Member Name="reset" Datatype="Bool">
+							<Comment>
+								<MultiLanguageText Lang="sv-SE">Resets to init state</MultiLanguageText>
+								<MultiLanguageText Lang="de-DE">Resets to init state</MultiLanguageText>
+								<MultiLanguageText Lang="en-US">Resets to init state</MultiLanguageText>
+								<MultiLanguageText Lang="es-ES">Resets to init state</MultiLanguageText>
+								<MultiLanguageText Lang="fr-FR">Resets to init state</MultiLanguageText>
+								<MultiLanguageText Lang="it-IT">Resets to init state</MultiLanguageText>
+								<MultiLanguageText Lang="ja-JP">Resets to init state</MultiLanguageText>
+								<MultiLanguageText Lang="zh-CN">Resets to init state</MultiLanguageText>
+							</Comment>
+						</Member>
+					</Section>
+					<Section Name="Output" />
+					<Section Name="InOut" />
+					<Section Name="Static">
+						<Member Name="statStep" Datatype="Int">
+							<Comment>
+								<MultiLanguageText Lang="sv-SE">Current step/state</MultiLanguageText>
+								<MultiLanguageText Lang="de-DE">Current step/state</MultiLanguageText>
+								<MultiLanguageText Lang="en-US">Current step/state</MultiLanguageText>
+								<MultiLanguageText Lang="es-ES">Current step/state</MultiLanguageText>
+								<MultiLanguageText Lang="fr-FR">Current step/state</MultiLanguageText>
+								<MultiLanguageText Lang="it-IT">Current step/state</MultiLanguageText>
+								<MultiLanguageText Lang="ja-JP">Current step/state</MultiLanguageText>
+								<MultiLanguageText Lang="zh-CN">Current step/state</MultiLanguageText>
+							</Comment>
+						</Member>
+						<Member Name="statNextStep" Datatype="Int">
+							<Comment>
+								<MultiLanguageText Lang="sv-SE">Step/State next PLC cycle</MultiLanguageText>
+								<MultiLanguageText Lang="de-DE">Step/State next PLC cycle</MultiLanguageText>
+								<MultiLanguageText Lang="en-US">Step/State next PLC cycle</MultiLanguageText>
+								<MultiLanguageText Lang="es-ES">Step/State next PLC cycle</MultiLanguageText>
+								<MultiLanguageText Lang="fr-FR">Step/State next PLC cycle</MultiLanguageText>
+								<MultiLanguageText Lang="it-IT">Step/State next PLC cycle</MultiLanguageText>
+								<MultiLanguageText Lang="ja-JP">Step/State next PLC cycle</MultiLanguageText>
+								<MultiLanguageText Lang="zh-CN">Step/State next PLC cycle</MultiLanguageText>
+							</Comment>
+						</Member>
+					</Section>
+					<Section Name="Temp" />
+					<Section Name="Constant">
+						<Member Name="INIT" Datatype="Int">
+							<StartValue>0</StartValue>
+						</Member>
+						<Member Name="GOTO_HOME" Datatype="Int">
+							<StartValue>10</StartValue>
+						</Member>
+						<Member Name="AT_HOME_POS" Datatype="Int">
+							<StartValue>20</StartValue>
+						</Member>
+						<Member Name="LOADING" Datatype="Int">
+							<StartValue>30</StartValue>
+						</Member>
+						<Member Name="WORKING" Datatype="Int">
+							<StartValue>40</StartValue>
+						</Member>
+						<Member Name="UNLOADING" Datatype="Int">
+							<StartValue>50</StartValue>
+						</Member>
+					</Section>
+				</Sections>
+			</Interface>
+			<MemoryLayout>Optimized</MemoryLayout>
+			<MemoryReserve>100</MemoryReserve>
+			<Name>DEMOSCHRITTKETTE</Name>
+			<Number>45</Number>
+			<ProgrammingLanguage>LAD</ProgrammingLanguage>
+			<SetENOAutomatically>false</SetENOAutomatically>
+		</AttributeList>
+		<ObjectList>
+			<MultilingualText ID="1" CompositionName="Comment">
+				<ObjectList>
+					<MultilingualTextItem ID="2" CompositionName="Items">
+						<AttributeList>
+							<Culture>sv-SE</Culture>
+							<Text>Auto genereted sequence by graph2LAD: 2024-11-19
+E.R. https://github.com/eliasrhoden</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="3" CompositionName="Items">
+						<AttributeList>
+							<Culture>de-DE</Culture>
+							<Text>Auto genereted sequence by graph2LAD: 2024-11-19
+E.R. https://github.com/eliasrhoden</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="4" CompositionName="Items">
+						<AttributeList>
+							<Culture>en-US</Culture>
+							<Text>Auto genereted sequence by graph2LAD: 2024-11-19
+E.R. https://github.com/eliasrhoden</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="5" CompositionName="Items">
+						<AttributeList>
+							<Culture>es-ES</Culture>
+							<Text>Auto genereted sequence by graph2LAD: 2024-11-19
+E.R. https://github.com/eliasrhoden</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="6" CompositionName="Items">
+						<AttributeList>
+							<Culture>fr-FR</Culture>
+							<Text>Auto genereted sequence by graph2LAD: 2024-11-19
+E.R. https://github.com/eliasrhoden</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="7" CompositionName="Items">
+						<AttributeList>
+							<Culture>it-IT</Culture>
+							<Text>Auto genereted sequence by graph2LAD: 2024-11-19
+E.R. https://github.com/eliasrhoden</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="8" CompositionName="Items">
+						<AttributeList>
+							<Culture>ja-JP</Culture>
+							<Text>Auto genereted sequence by graph2LAD: 2024-11-19
+E.R. https://github.com/eliasrhoden</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="9" CompositionName="Items">
+						<AttributeList>
+							<Culture>zh-CN</Culture>
+							<Text>Auto genereted sequence by graph2LAD: 2024-11-19
+E.R. https://github.com/eliasrhoden</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+				</ObjectList>
+			</MultilingualText>
+			<SW.Blocks.CompileUnit CompositionName="CompileUnits" ID="a">
+				<AttributeList>
+					<NetworkSource>
+						<StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+							<Token UId="21" Text="IF" />
+							<Blank UId="22" />
+							<Access UId="23" Scope="LocalVariable">
+								<Symbol UId="24">
+									<Component Name="reset" UId="25" />
+								</Symbol>
+							</Access>
+							<Blank UId="26" />
+							<Token UId="27" Text="THEN" />
+							<NewLine UId="28" />
+							<Blank UId="29" />
+							<Access UId="30" Scope="LocalVariable">
+								<Symbol UId="31">
+									<Component Name="statStep" UId="32" />
+								</Symbol>
+							</Access>
+							<Blank UId="33" />
+							<Token UId="34" Text=":=" />
+							<Blank UId="35" />
+							<Access UId="36" Scope="LocalConstant">
+								<Constant Name="INIT" UId="37" />
+							</Access>
+							<Token UId="38" Text=";" />
+							<NewLine UId="39" />
+							<Blank UId="40" />
+							<Access UId="41" Scope="LocalVariable">
+								<Symbol UId="42">
+									<Component Name="statNextStep" UId="43" />
+								</Symbol>
+							</Access>
+							<Blank UId="44" />
+							<Token UId="45" Text=":=" />
+							<Blank UId="46" />
+							<Access UId="47" Scope="LocalConstant">
+								<Constant Name="INIT" UId="48" />
+							</Access>
+							<Token UId="49" Text=";" />
+							<NewLine UId="50" />
+							<Token UId="51" Text="END_IF" />
+							<Token UId="52" Text=";" />
+						</StructuredText>
+					</NetworkSource>
+					<ProgrammingLanguage>SCL</ProgrammingLanguage>
+				</AttributeList>
+				<ObjectList>
+					<MultilingualText ID="b" CompositionName="Title">
+						<ObjectList>
+							<MultilingualTextItem ID="c" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>Reset</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="d" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>Reset</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="e" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>Reset</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="f" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>Reset</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="10" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>Reset</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="11" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>Reset</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="12" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>Reset</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="13" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>Reset</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+				</ObjectList>
+			</SW.Blocks.CompileUnit>
+			<SW.Blocks.CompileUnit CompositionName="CompileUnits" ID="14">
+				<AttributeList>
+					<NetworkSource>
+						<FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+							<Parts>
+								<Access UId="21" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statStep" />
+									</Symbol>
+								</Access>
+								<Access UId="22" Scope="LocalConstant">
+									<Constant Name="INIT" />
+								</Access>
+								<Access UId="23" Scope="LiteralConstant">
+									<Constant>
+										<ConstantType>Bool</ConstantType>
+										<ConstantValue>FALSE</ConstantValue>
+									</Constant>
+								</Access>
+								<Access UId="24" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statNextStep" />
+									</Symbol>
+								</Access>
+								<Access UId="25" Scope="LiteralConstant">
+									<Constant>
+										<ConstantType>Bool</ConstantType>
+										<ConstantValue>FALSE</ConstantValue>
+									</Constant>
+								</Access>
+								<Access UId="26" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statNextStep" />
+									</Symbol>
+								</Access>
+								<Access UId="27" Scope="LocalConstant">
+									<Constant Name="GOTO_HOME" />
+								</Access>
+								<Access UId="28" Scope="LocalConstant">
+									<Constant Name="UNLOADING" />
+								</Access>
+								<Part UId="29" Name="Eq">
+									<TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+								</Part>
+								<Part UId="30" Name="Contact" />
+								<Part UId="31" Name="Move" DisabledENO="true">
+									<TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+								</Part>
+								<Part UId="32" Name="Contact" />
+								<Part UId="33" Name="Move" DisabledENO="true">
+									<TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+								</Part>
+							</Parts>
+							<Wires>
+								<Wire UId="34">
+									<Powerrail />
+									<NameCon UId="29" Name="pre" />
+								</Wire>
+								<Wire UId="35">
+									<IdentCon UId="21" />
+									<NameCon UId="29" Name="in1" />
+								</Wire>
+								<Wire UId="36">
+									<IdentCon UId="22" />
+									<NameCon UId="29" Name="in2" />
+								</Wire>
+								<Wire UId="37">
+									<NameCon UId="29" Name="out" />
+									<NameCon UId="30" Name="in" />
+									<NameCon UId="32" Name="in" />
+								</Wire>
+								<Wire UId="38">
+									<IdentCon UId="23" />
+									<NameCon UId="30" Name="operand" />
+								</Wire>
+								<Wire UId="39">
+									<NameCon UId="30" Name="out" />
+									<NameCon UId="31" Name="en" />
+								</Wire>
+								<Wire UId="40">
+									<IdentCon UId="27" />
+									<NameCon UId="31" Name="in" />
+								</Wire>
+								<Wire UId="41">
+									<NameCon UId="31" Name="out1" />
+									<IdentCon UId="24" />
+								</Wire>
+								<Wire UId="42">
+									<IdentCon UId="25" />
+									<NameCon UId="32" Name="operand" />
+								</Wire>
+								<Wire UId="43">
+									<NameCon UId="32" Name="out" />
+									<NameCon UId="33" Name="en" />
+								</Wire>
+								<Wire UId="44">
+									<IdentCon UId="28" />
+									<NameCon UId="33" Name="in" />
+								</Wire>
+								<Wire UId="45">
+									<NameCon UId="33" Name="out1" />
+									<IdentCon UId="26" />
+								</Wire>
+							</Wires>
+						</FlgNet>
+					</NetworkSource>
+					<ProgrammingLanguage>LAD</ProgrammingLanguage>
+				</AttributeList>
+				<ObjectList>
+					<MultilingualText ID="15" CompositionName="Comment">
+						<ObjectList>
+							<MultilingualTextItem ID="16" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>INIT
+	 -&gt; GOTO_HOME 
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="17" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>INIT
+	 -&gt; GOTO_HOME 
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="18" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>INIT
+	 -&gt; GOTO_HOME 
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="19" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>INIT
+	 -&gt; GOTO_HOME 
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="1a" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>INIT
+	 -&gt; GOTO_HOME 
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="1b" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>INIT
+	 -&gt; GOTO_HOME 
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="1c" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>INIT
+	 -&gt; GOTO_HOME 
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="1d" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>INIT
+	 -&gt; GOTO_HOME 
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+					<MultilingualText ID="1e" CompositionName="Title">
+						<ObjectList>
+							<MultilingualTextItem ID="1f" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>INIT</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="20" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>INIT</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="21" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>INIT</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="22" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>INIT</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="23" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>INIT</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="24" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>INIT</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="25" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>INIT</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="26" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>INIT</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+				</ObjectList>
+			</SW.Blocks.CompileUnit>
+			<SW.Blocks.CompileUnit CompositionName="CompileUnits" ID="27">
+				<AttributeList>
+					<NetworkSource>
+						<FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+							<Parts>
+								<Access UId="21" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statStep" />
+									</Symbol>
+								</Access>
+								<Access UId="22" Scope="LocalConstant">
+									<Constant Name="GOTO_HOME" />
+								</Access>
+								<Access UId="23" Scope="LiteralConstant">
+									<Constant>
+										<ConstantType>Bool</ConstantType>
+										<ConstantValue>FALSE</ConstantValue>
+									</Constant>
+								</Access>
+								<Access UId="24" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statNextStep" />
+									</Symbol>
+								</Access>
+								<Access UId="25" Scope="LocalConstant">
+									<Constant Name="AT_HOME_POS" />
+								</Access>
+								<Part UId="26" Name="Eq">
+									<TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+								</Part>
+								<Part UId="27" Name="Contact" />
+								<Part UId="28" Name="Move" DisabledENO="true">
+									<TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+								</Part>
+							</Parts>
+							<Wires>
+								<Wire UId="29">
+									<Powerrail />
+									<NameCon UId="26" Name="pre" />
+								</Wire>
+								<Wire UId="30">
+									<IdentCon UId="21" />
+									<NameCon UId="26" Name="in1" />
+								</Wire>
+								<Wire UId="31">
+									<IdentCon UId="22" />
+									<NameCon UId="26" Name="in2" />
+								</Wire>
+								<Wire UId="32">
+									<NameCon UId="26" Name="out" />
+									<NameCon UId="27" Name="in" />
+								</Wire>
+								<Wire UId="33">
+									<IdentCon UId="23" />
+									<NameCon UId="27" Name="operand" />
+								</Wire>
+								<Wire UId="34">
+									<NameCon UId="27" Name="out" />
+									<NameCon UId="28" Name="en" />
+								</Wire>
+								<Wire UId="35">
+									<IdentCon UId="25" />
+									<NameCon UId="28" Name="in" />
+								</Wire>
+								<Wire UId="36">
+									<NameCon UId="28" Name="out1" />
+									<IdentCon UId="24" />
+								</Wire>
+							</Wires>
+						</FlgNet>
+					</NetworkSource>
+					<ProgrammingLanguage>LAD</ProgrammingLanguage>
+				</AttributeList>
+				<ObjectList>
+					<MultilingualText ID="28" CompositionName="Comment">
+						<ObjectList>
+							<MultilingualTextItem ID="29" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>GOTO_HOME
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="2a" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>GOTO_HOME
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="2b" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>GOTO_HOME
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="2c" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>GOTO_HOME
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="2d" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>GOTO_HOME
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="2e" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>GOTO_HOME
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="2f" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>GOTO_HOME
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="30" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>GOTO_HOME
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+					<MultilingualText ID="31" CompositionName="Title">
+						<ObjectList>
+							<MultilingualTextItem ID="32" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>GOTO_HOME</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="33" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>GOTO_HOME</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="34" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>GOTO_HOME</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="35" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>GOTO_HOME</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="36" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>GOTO_HOME</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="37" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>GOTO_HOME</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="38" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>GOTO_HOME</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="39" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>GOTO_HOME</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+				</ObjectList>
+			</SW.Blocks.CompileUnit>
+			<SW.Blocks.CompileUnit CompositionName="CompileUnits" ID="3a">
+				<AttributeList>
+					<NetworkSource>
+						<FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+							<Parts>
+								<Access UId="21" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statStep" />
+									</Symbol>
+								</Access>
+								<Access UId="22" Scope="LocalConstant">
+									<Constant Name="AT_HOME_POS" />
+								</Access>
+								<Access UId="23" Scope="LiteralConstant">
+									<Constant>
+										<ConstantType>Bool</ConstantType>
+										<ConstantValue>FALSE</ConstantValue>
+									</Constant>
+								</Access>
+								<Access UId="24" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statNextStep" />
+									</Symbol>
+								</Access>
+								<Access UId="25" Scope="LocalConstant">
+									<Constant Name="LOADING" />
+								</Access>
+								<Part UId="26" Name="Eq">
+									<TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+								</Part>
+								<Part UId="27" Name="Contact" />
+								<Part UId="28" Name="Move" DisabledENO="true">
+									<TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+								</Part>
+							</Parts>
+							<Wires>
+								<Wire UId="29">
+									<Powerrail />
+									<NameCon UId="26" Name="pre" />
+								</Wire>
+								<Wire UId="30">
+									<IdentCon UId="21" />
+									<NameCon UId="26" Name="in1" />
+								</Wire>
+								<Wire UId="31">
+									<IdentCon UId="22" />
+									<NameCon UId="26" Name="in2" />
+								</Wire>
+								<Wire UId="32">
+									<NameCon UId="26" Name="out" />
+									<NameCon UId="27" Name="in" />
+								</Wire>
+								<Wire UId="33">
+									<IdentCon UId="23" />
+									<NameCon UId="27" Name="operand" />
+								</Wire>
+								<Wire UId="34">
+									<NameCon UId="27" Name="out" />
+									<NameCon UId="28" Name="en" />
+								</Wire>
+								<Wire UId="35">
+									<IdentCon UId="25" />
+									<NameCon UId="28" Name="in" />
+								</Wire>
+								<Wire UId="36">
+									<NameCon UId="28" Name="out1" />
+									<IdentCon UId="24" />
+								</Wire>
+							</Wires>
+						</FlgNet>
+					</NetworkSource>
+					<ProgrammingLanguage>LAD</ProgrammingLanguage>
+				</AttributeList>
+				<ObjectList>
+					<MultilingualText ID="3b" CompositionName="Comment">
+						<ObjectList>
+							<MultilingualTextItem ID="3c" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>AT_HOME_POS
+	 -&gt; LOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="3d" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>AT_HOME_POS
+	 -&gt; LOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="3e" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>AT_HOME_POS
+	 -&gt; LOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="3f" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>AT_HOME_POS
+	 -&gt; LOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="40" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>AT_HOME_POS
+	 -&gt; LOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="41" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>AT_HOME_POS
+	 -&gt; LOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="42" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>AT_HOME_POS
+	 -&gt; LOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="43" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>AT_HOME_POS
+	 -&gt; LOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+					<MultilingualText ID="44" CompositionName="Title">
+						<ObjectList>
+							<MultilingualTextItem ID="45" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>AT_HOME_POS</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="46" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>AT_HOME_POS</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="47" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>AT_HOME_POS</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="48" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>AT_HOME_POS</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="49" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>AT_HOME_POS</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="4a" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>AT_HOME_POS</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="4b" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>AT_HOME_POS</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="4c" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>AT_HOME_POS</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+				</ObjectList>
+			</SW.Blocks.CompileUnit>
+			<SW.Blocks.CompileUnit CompositionName="CompileUnits" ID="4d">
+				<AttributeList>
+					<NetworkSource>
+						<FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+							<Parts>
+								<Access UId="21" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statStep" />
+									</Symbol>
+								</Access>
+								<Access UId="22" Scope="LocalConstant">
+									<Constant Name="LOADING" />
+								</Access>
+								<Access UId="23" Scope="LiteralConstant">
+									<Constant>
+										<ConstantType>Bool</ConstantType>
+										<ConstantValue>FALSE</ConstantValue>
+									</Constant>
+								</Access>
+								<Access UId="24" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statNextStep" />
+									</Symbol>
+								</Access>
+								<Access UId="25" Scope="LocalConstant">
+									<Constant Name="WORKING" />
+								</Access>
+								<Part UId="26" Name="Eq">
+									<TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+								</Part>
+								<Part UId="27" Name="Contact" />
+								<Part UId="28" Name="Move" DisabledENO="true">
+									<TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+								</Part>
+							</Parts>
+							<Wires>
+								<Wire UId="29">
+									<Powerrail />
+									<NameCon UId="26" Name="pre" />
+								</Wire>
+								<Wire UId="30">
+									<IdentCon UId="21" />
+									<NameCon UId="26" Name="in1" />
+								</Wire>
+								<Wire UId="31">
+									<IdentCon UId="22" />
+									<NameCon UId="26" Name="in2" />
+								</Wire>
+								<Wire UId="32">
+									<NameCon UId="26" Name="out" />
+									<NameCon UId="27" Name="in" />
+								</Wire>
+								<Wire UId="33">
+									<IdentCon UId="23" />
+									<NameCon UId="27" Name="operand" />
+								</Wire>
+								<Wire UId="34">
+									<NameCon UId="27" Name="out" />
+									<NameCon UId="28" Name="en" />
+								</Wire>
+								<Wire UId="35">
+									<IdentCon UId="25" />
+									<NameCon UId="28" Name="in" />
+								</Wire>
+								<Wire UId="36">
+									<NameCon UId="28" Name="out1" />
+									<IdentCon UId="24" />
+								</Wire>
+							</Wires>
+						</FlgNet>
+					</NetworkSource>
+					<ProgrammingLanguage>LAD</ProgrammingLanguage>
+				</AttributeList>
+				<ObjectList>
+					<MultilingualText ID="4e" CompositionName="Comment">
+						<ObjectList>
+							<MultilingualTextItem ID="4f" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>LOADING
+	 -&gt; WORKING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="50" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>LOADING
+	 -&gt; WORKING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="51" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>LOADING
+	 -&gt; WORKING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="52" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>LOADING
+	 -&gt; WORKING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="53" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>LOADING
+	 -&gt; WORKING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="54" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>LOADING
+	 -&gt; WORKING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="55" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>LOADING
+	 -&gt; WORKING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="56" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>LOADING
+	 -&gt; WORKING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+					<MultilingualText ID="57" CompositionName="Title">
+						<ObjectList>
+							<MultilingualTextItem ID="58" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>LOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="59" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>LOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="5a" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>LOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="5b" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>LOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="5c" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>LOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="5d" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>LOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="5e" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>LOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="5f" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>LOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+				</ObjectList>
+			</SW.Blocks.CompileUnit>
+			<SW.Blocks.CompileUnit CompositionName="CompileUnits" ID="60">
+				<AttributeList>
+					<NetworkSource>
+						<FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+							<Parts>
+								<Access UId="21" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statStep" />
+									</Symbol>
+								</Access>
+								<Access UId="22" Scope="LocalConstant">
+									<Constant Name="WORKING" />
+								</Access>
+								<Access UId="23" Scope="LiteralConstant">
+									<Constant>
+										<ConstantType>Bool</ConstantType>
+										<ConstantValue>FALSE</ConstantValue>
+									</Constant>
+								</Access>
+								<Access UId="24" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statNextStep" />
+									</Symbol>
+								</Access>
+								<Access UId="25" Scope="LocalConstant">
+									<Constant Name="UNLOADING" />
+								</Access>
+								<Part UId="26" Name="Eq">
+									<TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+								</Part>
+								<Part UId="27" Name="Contact" />
+								<Part UId="28" Name="Move" DisabledENO="true">
+									<TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+								</Part>
+							</Parts>
+							<Wires>
+								<Wire UId="29">
+									<Powerrail />
+									<NameCon UId="26" Name="pre" />
+								</Wire>
+								<Wire UId="30">
+									<IdentCon UId="21" />
+									<NameCon UId="26" Name="in1" />
+								</Wire>
+								<Wire UId="31">
+									<IdentCon UId="22" />
+									<NameCon UId="26" Name="in2" />
+								</Wire>
+								<Wire UId="32">
+									<NameCon UId="26" Name="out" />
+									<NameCon UId="27" Name="in" />
+								</Wire>
+								<Wire UId="33">
+									<IdentCon UId="23" />
+									<NameCon UId="27" Name="operand" />
+								</Wire>
+								<Wire UId="34">
+									<NameCon UId="27" Name="out" />
+									<NameCon UId="28" Name="en" />
+								</Wire>
+								<Wire UId="35">
+									<IdentCon UId="25" />
+									<NameCon UId="28" Name="in" />
+								</Wire>
+								<Wire UId="36">
+									<NameCon UId="28" Name="out1" />
+									<IdentCon UId="24" />
+								</Wire>
+							</Wires>
+						</FlgNet>
+					</NetworkSource>
+					<ProgrammingLanguage>LAD</ProgrammingLanguage>
+				</AttributeList>
+				<ObjectList>
+					<MultilingualText ID="61" CompositionName="Comment">
+						<ObjectList>
+							<MultilingualTextItem ID="62" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>WORKING
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="63" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>WORKING
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="64" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>WORKING
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="65" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>WORKING
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="66" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>WORKING
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="67" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>WORKING
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="68" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>WORKING
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="69" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>WORKING
+	 -&gt; UNLOADING 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+					<MultilingualText ID="6a" CompositionName="Title">
+						<ObjectList>
+							<MultilingualTextItem ID="6b" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>WORKING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="6c" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>WORKING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="6d" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>WORKING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="6e" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>WORKING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="6f" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>WORKING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="70" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>WORKING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="71" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>WORKING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="72" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>WORKING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+				</ObjectList>
+			</SW.Blocks.CompileUnit>
+			<SW.Blocks.CompileUnit CompositionName="CompileUnits" ID="73">
+				<AttributeList>
+					<NetworkSource>
+						<FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+							<Parts>
+								<Access UId="21" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statStep" />
+									</Symbol>
+								</Access>
+								<Access UId="22" Scope="LocalConstant">
+									<Constant Name="UNLOADING" />
+								</Access>
+								<Access UId="23" Scope="LiteralConstant">
+									<Constant>
+										<ConstantType>Bool</ConstantType>
+										<ConstantValue>FALSE</ConstantValue>
+									</Constant>
+								</Access>
+								<Access UId="24" Scope="LocalVariable">
+									<Symbol>
+										<Component Name="statNextStep" />
+									</Symbol>
+								</Access>
+								<Access UId="25" Scope="LocalConstant">
+									<Constant Name="AT_HOME_POS" />
+								</Access>
+								<Part UId="26" Name="Eq">
+									<TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+								</Part>
+								<Part UId="27" Name="Contact" />
+								<Part UId="28" Name="Move" DisabledENO="true">
+									<TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+								</Part>
+							</Parts>
+							<Wires>
+								<Wire UId="29">
+									<Powerrail />
+									<NameCon UId="26" Name="pre" />
+								</Wire>
+								<Wire UId="30">
+									<IdentCon UId="21" />
+									<NameCon UId="26" Name="in1" />
+								</Wire>
+								<Wire UId="31">
+									<IdentCon UId="22" />
+									<NameCon UId="26" Name="in2" />
+								</Wire>
+								<Wire UId="32">
+									<NameCon UId="26" Name="out" />
+									<NameCon UId="27" Name="in" />
+								</Wire>
+								<Wire UId="33">
+									<IdentCon UId="23" />
+									<NameCon UId="27" Name="operand" />
+								</Wire>
+								<Wire UId="34">
+									<NameCon UId="27" Name="out" />
+									<NameCon UId="28" Name="en" />
+								</Wire>
+								<Wire UId="35">
+									<IdentCon UId="25" />
+									<NameCon UId="28" Name="in" />
+								</Wire>
+								<Wire UId="36">
+									<NameCon UId="28" Name="out1" />
+									<IdentCon UId="24" />
+								</Wire>
+							</Wires>
+						</FlgNet>
+					</NetworkSource>
+					<ProgrammingLanguage>LAD</ProgrammingLanguage>
+				</AttributeList>
+				<ObjectList>
+					<MultilingualText ID="74" CompositionName="Comment">
+						<ObjectList>
+							<MultilingualTextItem ID="75" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>UNLOADING
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="76" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>UNLOADING
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="77" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>UNLOADING
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="78" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>UNLOADING
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="79" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>UNLOADING
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="7a" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>UNLOADING
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="7b" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>UNLOADING
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="7c" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>UNLOADING
+	 -&gt; AT_HOME_POS 
+</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+					<MultilingualText ID="7d" CompositionName="Title">
+						<ObjectList>
+							<MultilingualTextItem ID="7e" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>UNLOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="7f" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>UNLOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="80" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>UNLOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="81" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>UNLOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="82" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>UNLOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="83" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>UNLOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="84" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>UNLOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="85" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>UNLOADING</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+				</ObjectList>
+			</SW.Blocks.CompileUnit>
+			<SW.Blocks.CompileUnit CompositionName="CompileUnits" ID="86">
+				<AttributeList>
+					<NetworkSource>
+						<StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+							<Token UId="21" Text="IF" />
+							<Blank UId="22" />
+							<Access UId="23" Scope="LocalVariable">
+								<Symbol UId="24">
+									<Component Name="enable" UId="25" />
+								</Symbol>
+							</Access>
+							<Blank UId="26" />
+							<Token UId="27" Text="THEN" />
+							<NewLine UId="28" />
+							<Blank UId="29" />
+							<Access UId="30" Scope="LocalVariable">
+								<Symbol UId="31">
+									<Component Name="statStep" UId="32" />
+								</Symbol>
+							</Access>
+							<Blank UId="33" />
+							<Token UId="34" Text=":=" />
+							<Blank UId="35" />
+							<Access UId="36" Scope="LocalVariable">
+								<Symbol UId="37">
+									<Component Name="statNextStep" UId="38" />
+								</Symbol>
+							</Access>
+							<Token UId="39" Text=";" />
+							<NewLine UId="40" />
+							<Token UId="41" Text="END_IF" />
+							<Token UId="42" Text=";" />
+						</StructuredText>
+					</NetworkSource>
+					<ProgrammingLanguage>SCL</ProgrammingLanguage>
+				</AttributeList>
+				<ObjectList>
+					<MultilingualText ID="87" CompositionName="Title">
+						<ObjectList>
+							<MultilingualTextItem ID="88" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>Next step</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="89" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>Next step</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="8a" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>Next step</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="8b" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>Next step</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="8c" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>Next step</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="8d" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>Next step</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="8e" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>Next step</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="8f" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>Next step</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+					<MultilingualText ID="90" CompositionName="Comment">
+						<ObjectList>
+							<MultilingualTextItem ID="91" CompositionName="Items">
+								<AttributeList>
+									<Culture>sv-SE</Culture>
+									<Text>This ensurers that we remain in each state step at least 1 plc cycle</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="92" CompositionName="Items">
+								<AttributeList>
+									<Culture>de-DE</Culture>
+									<Text>This ensurers that we remain in each state step at least 1 plc cycle</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="93" CompositionName="Items">
+								<AttributeList>
+									<Culture>en-US</Culture>
+									<Text>This ensurers that we remain in each state step at least 1 plc cycle</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="94" CompositionName="Items">
+								<AttributeList>
+									<Culture>es-ES</Culture>
+									<Text>This ensurers that we remain in each state step at least 1 plc cycle</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="95" CompositionName="Items">
+								<AttributeList>
+									<Culture>fr-FR</Culture>
+									<Text>This ensurers that we remain in each state step at least 1 plc cycle</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="96" CompositionName="Items">
+								<AttributeList>
+									<Culture>it-IT</Culture>
+									<Text>This ensurers that we remain in each state step at least 1 plc cycle</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="97" CompositionName="Items">
+								<AttributeList>
+									<Culture>ja-JP</Culture>
+									<Text>This ensurers that we remain in each state step at least 1 plc cycle</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+							<MultilingualTextItem ID="98" CompositionName="Items">
+								<AttributeList>
+									<Culture>zh-CN</Culture>
+									<Text>This ensurers that we remain in each state step at least 1 plc cycle</Text>
+								</AttributeList>
+							</MultilingualTextItem>
+						</ObjectList>
+					</MultilingualText>
+				</ObjectList>
+			</SW.Blocks.CompileUnit>
+			<MultilingualText ID="99" CompositionName="Title">
+				<ObjectList>
+					<MultilingualTextItem ID="9a" CompositionName="Items">
+						<AttributeList>
+							<Culture>sv-SE</Culture>
+							<Text>DemoSchrittKette</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="9b" CompositionName="Items">
+						<AttributeList>
+							<Culture>de-DE</Culture>
+							<Text>DemoSchrittKette</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="9c" CompositionName="Items">
+						<AttributeList>
+							<Culture>en-US</Culture>
+							<Text>DemoSchrittKette</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="9d" CompositionName="Items">
+						<AttributeList>
+							<Culture>es-ES</Culture>
+							<Text>DemoSchrittKette</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="9e" CompositionName="Items">
+						<AttributeList>
+							<Culture>fr-FR</Culture>
+							<Text>DemoSchrittKette</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="9f" CompositionName="Items">
+						<AttributeList>
+							<Culture>it-IT</Culture>
+							<Text>DemoSchrittKette</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="a0" CompositionName="Items">
+						<AttributeList>
+							<Culture>ja-JP</Culture>
+							<Text>DemoSchrittKette</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+					<MultilingualTextItem ID="a1" CompositionName="Items">
+						<AttributeList>
+							<Culture>zh-CN</Culture>
+							<Text>DemoSchrittKette</Text>
+						</AttributeList>
+					</MultilingualTextItem>
+				</ObjectList>
+			</MultilingualText>
+		</ObjectList>
+	</SW.Blocks.FB>
+</Document>
