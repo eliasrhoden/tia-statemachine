@@ -3,7 +3,7 @@
 A python library for generation of state-machine template Function Blocks for Siemens TIA-Portal.
 
 This library makes it possible to start with the *design documentation* and generate the code from it. 
-I always find that when I start with a rough outline (documentation) of what I want to do, the code usualy tourns out better, this library is to support that kind of workflow.
+I always find that when I start with a rough outline (documentation) of what I want to do, the code usualy turns out better, this library is to support that kind of workflow.
 
 
 ## Workflow
