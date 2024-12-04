@@ -635,16 +635,6 @@ def _create_multilanguageComment_blk_io(root,text):
         mlt.text = text
 
 
-#def write_network_comments(root,uid,title,comment):
-#    """
-#    Writes title and comment to a network
-#    """
-#    
-#    obj_list = ET.SubElement(root, "ObjectList")
-#    _create_multilingual_text(obj_list,_int2hex(uid.tic()),'Title',title)
-#    _create_multilingual_text(obj_list,_int2hex(uid.tic()),'Comment',comment)
-
-
 def render_graph(events:list[Event],init_state:str,fname:str,clean_event_names=True):
     """
     Renders a graph of the state machine to a pdf file
@@ -655,7 +645,7 @@ def render_graph(events:list[Event],init_state:str,fname:str,clean_event_names=T
         init_state = _clean_str(init_state)
     f = graphviz.Digraph('finite_state_machine', filename=fname,format='pdf')
     # LR = Horizontal, TB = Vertical
-    f.attr(rankdir='TB', size='8,5')
+    f.attr(rankdir='TB')
 
     f.attr('node', shape='doublecircle')
     f.node(init_state)
